@@ -1,0 +1,43 @@
+<h1 id="puzzle_solver">Puzzle Solver</h1>
+
+<h4 id="written_by_jordan_williams">Written by Jordan Williams</h4>
+
+<hr />
+
+<p>PuzzleSolver will determine if a puzzle is solvable. If it is is solvable in deterministic time, the program will display the required actions to reach a solution as well as the number of possible action sequences examined. If a puzzle is not solvable in deterministic time, the program will report it as unsolvable.</p>
+
+<p>Three algorithms are used in PuzzleSolver: <strong><em>A* Search</em></strong>, <strong><em>Breadth-First Search</em></strong> and <strong><em>Iterative Deepening Search</em></strong>.</p>
+
+<h3 id="running_puzzle_solver">Running Puzzle Solver</h3>
+
+<p>Run PuzzleSolver by navigating to this directory. Then enter <code>java -jar jwill49PuzzleSolver.jar</code></p>
+
+<p>If running on a 64-bit machine, include the 64-bit flag : <code>java -d64 -jar jwill49PuzzleSolver.jar</code></p>
+
+<p>PuzzleSolver accepts the following flags at command line:</p>
+
+<ul>
+<li><strong><code>-a             solve Puzzle with the A* Search algorithm</code></strong></li>
+<li><strong><code>-b           solve Puzzle using Breadth-First-Search</code></strong></li>
+<li><code>-c &lt;int[16]&gt; generate problem Puzzle using a custom sequence. Separate values with','</code></li>
+<li><code>-f &lt;file&gt;    generate problem Puzzle using a text file</code></li>
+<li><code>-h,--help</code></li>
+<li><code>-h1           change the heuristic for A* to displaced tiles. Default is Manhattan Score</code></li>
+<li><strong><code>-i           solve Puzzle using Iterative-Depth-Search</code></strong></li>
+<li><code>-l &lt;int&gt;     use value for maximum depth for Iterative-Deepening-Search</code></li>
+<li><code>-r &lt;int&gt;     use value to generate a problem Puzzle with a specified number of randomized moves*</code></li>
+<li><code>-size &lt;int&gt;  change the Puzzle dimensions to n by n. The default is 4 by 4</code></li>
+<li><code>-t           run the PuzzleSolver test suite</code></li>
+</ul>
+
+<p>* <strong>Note:</strong> a randomized board is the solution plus a sequence of randomized swaps with the blank square and its neighbors. Because of boundary cases and the possibility of a move negating its predecessor, this only ensures that a solution <strong><em>is no deeper</em></strong> in the decision tree than this value.</p>
+
+<h2 id="you_must_use_any_combination_of_a_b_and_i_flags_to_solve_a_puzzle">You must use any combination of <code>-a</code>, <code>-b</code>, and <code>-i</code> flags to solve a puzzle!</h2>
+
+<h3 id="recompiling">Recompiling</h3>
+
+<ol>
+<li>Update java source files in src/puzzle</li>
+<li>Run <code>javac -cp lib/*:. src/puzzle/*.java -d bin/</code></li>
+<li>Run <code>ant</code></li>
+</ol>
